@@ -10,8 +10,8 @@ CREATE TABLE person."persona"(
     persona_nombres character varying(100) NOT NULL,
     persona_apellidos character varying(100) NOT NULL,
     persona_edad INTEGER NOT NULL,
-    persona_celular INTEGER NOT NULL,
-    persona_telefono INTEGER,
+    persona_celular character varying(15) NOT NULL,
+    persona_telefono character varying(15) NOT NULL DEFAULT '',
     persona_sexo character varying(20) NOT NULL,
     persona_direccion character varying(50) NOT NULL,
     persona_correo character varying(50),
@@ -54,6 +54,7 @@ CREATE TABLE person."farmaceutico"(
 CREATE TABLE person."usuario"(
     id_usuario BIGSERIAL NOT NULL,
     id_persona INTEGER NOT NULL,
+    id_rol INTEGER NOT NULL,
     usuario_nombre character varying(15) NOT NULL,
     usuario_contrasena character varying(20) NOT NULL,
     usuario_tipo character varying(1) NOT NULL DEFAULT 'F',
@@ -65,18 +66,19 @@ CREATE TABLE person."usuario"(
 CREATE TABLE person."rol"(
     id_rol BIGSERIAL NOT NULL,
     rol_nombre character varying(15) NOT NULL,
+    rol_observacion TEXT NOT NULL,
     rol_activo BOOLEAN NOT NULL DEFAULT 'true',
     CONSTRAINT rol_pk PRIMARY KEY("id_rol")
 ) WITH (OIDS = FALSE);
 -- 3 atributos
 
-CREATE TABLE person."personaRol"(
-    id_persona_rol BIGSERIAL NOT NULL,
-    id_persona INTEGER NOT NULL,
-    id_rol INTEGER NOT NULL,
-    persona_rol_activo BOOLEAN NOT NULL,
-    CONSTRAINT persona_rol_pk PRIMARY KEY("id_persona_rol")
-) WITH (OIDS = FALSE);
+-- CREATE TABLE person."personaRol"(
+--     id_persona_rol BIGSERIAL NOT NULL,
+--     id_persona INTEGER NOT NULL,
+--     id_rol INTEGER NOT NULL,
+--     persona_rol_activo BOOLEAN NOT NULL,
+--     CONSTRAINT persona_rol_pk PRIMARY KEY("id_persona_rol")
+-- ) WITH (OIDS = FALSE);
 -- 4 atributos
 
 CREATE TABLE person."factura"(

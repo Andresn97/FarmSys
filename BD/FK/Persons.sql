@@ -124,3 +124,9 @@ ADD CONSTRAINT id_usuario_historial
 FOREIGN KEY (id_usuario)
 REFERENCES person."usuario" (id_usuario)
 ON UPDATE CASCADE ON DELETE CASCADE;
+
+ALTER TABLE person."usuario" 
+ADD CONSTRAINT id_rol_usuario 
+FOREIGN KEY (id_rol)
+REFERENCES person."rol" (id_rol)
+ON UPDATE CASCADE ON DELETE CASCADE;

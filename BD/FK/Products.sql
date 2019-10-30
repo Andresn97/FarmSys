@@ -58,3 +58,21 @@ ADD CONSTRAINT id_imagen_bloqueada
 FOREIGN KEY (id_imagen_producto)
 REFERENCES product."imagenProducto" (id_imagen_producto)
 ON UPDATE CASCADE ON DELETE CASCADE;
+
+ALTER TABLE product."inventarioStock" 
+ADD CONSTRAINT id_inventario_stock 
+FOREIGN KEY (id_inventario)
+REFERENCES product."inventario" (id_inventario)
+ON UPDATE CASCADE ON DELETE CASCADE;
+
+ALTER TABLE product."stockUnidades" 
+ADD CONSTRAINT id_inventario_stock_unidades
+FOREIGN KEY (id_inventario_stock)
+REFERENCES product."inventarioStock" (id_inventario_stock)
+ON UPDATE CASCADE ON DELETE CASCADE;
+
+ALTER TABLE product."inventario" 
+ADD CONSTRAINT id_inventario_sucursal
+FOREIGN KEY (id_sucursal)
+REFERENCES product."sucursal" (id_sucursal)
+ON UPDATE CASCADE ON DELETE CASCADE;

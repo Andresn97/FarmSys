@@ -5,6 +5,15 @@ VALUES( 'Farmaceutico', true);
 INSERT INTO person."tipoPersona"( tipo_nombre, tipo_persona_activo)
 VALUES( 'Cliente', true);
 
+INSERT INTO person."rol"( rol_nombre, rol_observacion, rol_activo)
+VALUES( 'Admin', 'Permisos completos de uso', true);
+
+INSERT INTO person."rol"( rol_nombre, rol_observacion, rol_activo)
+VALUES( 'Empleado', 'Permisos medianamente completos de uso', true);
+
+INSERT INTO person."rol"( rol_nombre, rol_observacion, rol_activo)
+VALUES( 'ROOT', 'Permiso de desarrollador', true);
+
 INSERT INTO person."persona"( id_tipo_persona, persona_identificacion,
 persona_nombres, persona_apellidos, persona_edad, persona_celular, persona_telefono,
 persona_sexo, persona_direccion, persona_correo, persona_fecha_registro, persona_activa)
@@ -16,5 +25,5 @@ horario_salida, farmaceutico_sueldo, farmaceutico_fecha_registro, farmaceutico_a
 VALUES( 1, 5, '10:00', '20:00', 450.00, now(), true);
 
 INSERT INTO person."usuario"( id_persona, usuario_nombre, usuario_contrasena,
-usuario_tipo, usuario_activo)
-VALUES( 1, 'juan94', '12345', 'F', true);
+usuario_tipo, usuario_activo, id_rol)
+VALUES( 1, 'juan94', '12345', 'R', true, 3);

@@ -52,16 +52,13 @@ CREATE TABLE product."preferenciaNoRegistrado"(
 
 CREATE TABLE product."inventario"(
     id_inventario BIGSERIAL NOT NULL,
+    id_sucursal INTEGER NOT NULL DEFAULT 1,
     id_producto INTEGER NOT NULL,
-    producto_stock INTEGER NOT NULL DEFAULT 0,
-    producto_costo NUMERIC(5,2) DEFAULT 0,
-    fecha_ingreso TIMESTAMP NOT NULL DEFAULT now(),
-    fecha_caducidad TIMESTAMP,
-    total_costo NUMERIC(5,2) DEFAULT 0,
+    producto_iva NUMERIC(3,2) NOT NULL DEFAULT 0,
     inventario_activo BOOLEAN DEFAULT 'true',
     CONSTRAINT inventario_pk PRIMARY KEY("id_inventario")
 ) WITH (OIDS = FALSE);
--- 8 atributos
+-- 4 atributos
 
 CREATE TABLE product."usoProducto"(
     id_uso_producto BIGSERIAL NOT NULL,
@@ -119,3 +116,36 @@ CREATE TABLE product."imagenBloqueada"(
 ) WITH (OIDS = FALSE);
 -- 5 atributos
 
+CREATE TABLE product."inventarioStock"(
+    id_inventario_stock BIGSERIAL NOT NULL,
+    id_inventario INTEGER NOT NULL,
+    cantidad_stock INTEGER NOT NULL DEFAULT 0,
+    stock_fecha_ingreso TIMESTAMP NOT NULL DEFAULT now(),
+    stock_fecha_caducidad TIMESTAMP NOT NULL,
+    stock_costo_producto NUMERIC(5,2) NOT NULL DEFAULT 0,
+    stock_total_costo NUMERIC(5,2) NOT NULL DEFAULT 0,
+    stock_activo BOOLEAN NOT NULL DEFAULT 'true',
+    CONSTRAINT invetario_stock_pk PRIMARY KEY("id_inventario_stock")
+) WITH (OIDS = FALSE);
+-- 8 atributos
+
+CREATE TABLE product."stockUnidades"(
+    id_stock_unidades BIGSERIAL NOT NULL,
+    id_inventario_stock INTEGER NOT NULL,
+    cantidad_unidades INTEGER NOT NULL,
+    stock_unidades_activo BOOLEAN NOT NULL,
+    CONSTRAINT stock_unidades_pk PRIMARY KEY("id_stock_unidades")
+) WITH (OIDS = FALSE);
+-- 4 atributos
+
+CREATE TABLE product."sucursal"(
+    id_sucursal BIGSERIAL NOT NULL,
+    nombre_sucursal character varying(30) NOT NULL,
+    direccion_sucursal character varying(100) NOT NULL,
+    telefono_sucursal character varying(15) NOT NULL DEFAULT '',
+    celular_sucursal character varying(15) NOT NULL DEFAULT '',
+    email_sucursal character varying(20) NOT NULL DEFAULT '',
+    sucursal_activa BOOLEAN NOT NULL DEFAULT 'true',
+    CONSTRAINT sucursal_pk PRIMARY KEY("id_sucursal")
+) WITH (OIDS = FALSE);
+-- 7 atributos
