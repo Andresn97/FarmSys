@@ -7,8 +7,10 @@ CREATE TABLE person."persona"(
     id_persona BIGSERIAL NOT NULL,
     id_tipo_persona INTEGER NOT NULL,
     persona_identificacion character varying(15),
-    persona_nombres character varying(100) NOT NULL,
-    persona_apellidos character varying(100) NOT NULL,
+    persona_primer_nombre character varying(40) NOT NULL,
+    persona_segundo_nombre character varying(40) NOT NULL,
+    persona_primer_apellido character varying(40) NOT NULL,
+    persona_segundo_apellido character varying(40) NOT NULL,
     persona_edad INTEGER NOT NULL,
     persona_celular character varying(15) NOT NULL,
     persona_telefono character varying(15) NOT NULL DEFAULT '',
@@ -83,6 +85,7 @@ CREATE TABLE person."rol"(
 
 CREATE TABLE person."factura"(
     id_factura BIGSERIAL NOT NULL,
+    id_sucursal INTEGER NOT NULL DEFAULT 1,
     id_farmaceutico INTEGER NOT NULL,
     factura_cantidad_unidades INTEGER DEFAULT 0,
     factura_cantidad INTEGER NOT NULL DEFAULT 0,

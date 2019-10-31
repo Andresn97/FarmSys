@@ -130,3 +130,9 @@ ADD CONSTRAINT id_rol_usuario
 FOREIGN KEY (id_rol)
 REFERENCES person."rol" (id_rol)
 ON UPDATE CASCADE ON DELETE CASCADE;
+
+ALTER TABLE person."factura" 
+ADD CONSTRAINT id_sucursal_factura
+FOREIGN KEY (id_sucursal)
+REFERENCES product."sucursal" (id_sucursal)
+ON UPDATE CASCADE ON DELETE CASCADE;
