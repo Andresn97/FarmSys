@@ -1,5 +1,8 @@
 
-package farmasys.modelo.person;
+package farmasys.modelo.person.usuario;
+
+import farmasys.modelo.person.PersonaMD;
+import farmasys.modelo.person.rol.RolMD;
 
 public class UsuarioMD {
     

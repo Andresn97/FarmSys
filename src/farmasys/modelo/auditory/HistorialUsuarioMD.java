@@ -1,7 +1,7 @@
 
 package farmasys.modelo.auditory;
 
-import farmasys.modelo.person.UsuarioMD;
+import farmasys.modelo.person.usuario.UsuarioMD;
 import java.util.Date;
 
 public class HistorialUsuarioMD {

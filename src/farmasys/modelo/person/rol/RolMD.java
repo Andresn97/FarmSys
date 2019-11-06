@@ -1,5 +1,5 @@
 
-package farmasys.modelo.person;
+package farmasys.modelo.person.rol;
 
 public class RolMD {
     
