@@ -5,6 +5,7 @@
  */
 package farmasys.vista;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -23,27 +24,27 @@ public class VtnSesion extends javax.swing.JFrame {
     }
 
     public JLabel getjLabel1() {
-        return jLabel1;
+        return Lbl_Titulo;
     }
 
     public void setjLabel1(JLabel jLabel1) {
-        this.jLabel1 = jLabel1;
+        this.Lbl_Titulo = jLabel1;
     }
 
     public JLabel getjLabel2() {
-        return jLabel2;
+        return Lbl_Nmb_User;
     }
 
     public void setjLabel2(JLabel jLabel2) {
-        this.jLabel2 = jLabel2;
+        this.Lbl_Nmb_User = jLabel2;
     }
 
     public JLabel getjLabel3() {
-        return jLabel3;
+        return Lbl_Pass;
     }
 
     public void setjLabel3(JLabel jLabel3) {
-        this.jLabel3 = jLabel3;
+        this.Lbl_Pass = jLabel3;
     }
 
     public JPanel getjPanel1() {
@@ -55,19 +56,83 @@ public class VtnSesion extends javax.swing.JFrame {
     }
 
     public JTextField getjTextField1() {
-        return jTextField1;
+        return Txt_Nmb_User;
     }
 
     public void setjTextField1(JTextField jTextField1) {
-        this.jTextField1 = jTextField1;
+        this.Txt_Nmb_User = jTextField1;
     }
 
     public JTextField getjTextField2() {
-        return jTextField2;
+        return Txt_Pass;
     }
 
     public void setjTextField2(JTextField jTextField2) {
-        this.jTextField2 = jTextField2;
+        this.Txt_Pass = jTextField2;
+    }
+
+    public JButton getBtn_Cancelar() {
+        return Btn_Cancelar;
+    }
+
+    public void setBtn_Cancelar(JButton Btn_Cancelar) {
+        this.Btn_Cancelar = Btn_Cancelar;
+    }
+
+    public JButton getBtn_Iniciar() {
+        return Btn_Iniciar;
+    }
+
+    public void setBtn_Iniciar(JButton Btn_Iniciar) {
+        this.Btn_Iniciar = Btn_Iniciar;
+    }
+
+    public JLabel getLbl_Nmb_User() {
+        return Lbl_Nmb_User;
+    }
+
+    public void setLbl_Nmb_User(JLabel Lbl_Nmb_User) {
+        this.Lbl_Nmb_User = Lbl_Nmb_User;
+    }
+
+    public JLabel getLbl_Pass() {
+        return Lbl_Pass;
+    }
+
+    public void setLbl_Pass(JLabel Lbl_Pass) {
+        this.Lbl_Pass = Lbl_Pass;
+    }
+
+    public JLabel getLbl_Titulo() {
+        return Lbl_Titulo;
+    }
+
+    public void setLbl_Titulo(JLabel Lbl_Titulo) {
+        this.Lbl_Titulo = Lbl_Titulo;
+    }
+
+    public JTextField getTxt_Nmb_User() {
+        return Txt_Nmb_User;
+    }
+
+    public void setTxt_Nmb_User(JTextField Txt_Nmb_User) {
+        this.Txt_Nmb_User = Txt_Nmb_User;
+    }
+
+    public JTextField getTxt_Pass() {
+        return Txt_Pass;
+    }
+
+    public void setTxt_Pass(JTextField Txt_Pass) {
+        this.Txt_Pass = Txt_Pass;
+    }
+
+    public JLabel getLbl_Error_Sesion() {
+        return Lbl_Error_Sesion;
+    }
+
+    public void setLbl_Error_Sesion(JLabel Lbl_Error_Sesion) {
+        this.Lbl_Error_Sesion = Lbl_Error_Sesion;
     }
     
     
@@ -82,68 +147,90 @@ public class VtnSesion extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        Lbl_Titulo = new javax.swing.JLabel();
+        Lbl_Nmb_User = new javax.swing.JLabel();
+        Lbl_Pass = new javax.swing.JLabel();
+        Txt_Nmb_User = new javax.swing.JTextField();
+        Txt_Pass = new javax.swing.JTextField();
+        Btn_Iniciar = new javax.swing.JButton();
+        Btn_Cancelar = new javax.swing.JButton();
+        Lbl_Error_Sesion = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Inicio de Sesión");
+        Lbl_Titulo.setText("Inicio de Sesión");
 
-        jLabel2.setText("Nombre de Usuario:");
+        Lbl_Nmb_User.setText("Nombre de Usuario:");
 
-        jLabel3.setText("Contraseña:");
+        Lbl_Pass.setText("Contraseña:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        Txt_Nmb_User.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                Txt_Nmb_UserActionPerformed(evt);
             }
         });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        Txt_Pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                Txt_PassActionPerformed(evt);
             }
         });
+
+        Btn_Iniciar.setText("Iniciar");
+
+        Btn_Cancelar.setText("Cancelar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(Btn_Iniciar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
+                .addComponent(Btn_Cancelar)
+                .addGap(96, 96, 96))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(172, 172, 172)
-                        .addComponent(jLabel1))
+                        .addComponent(Lbl_Titulo))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(182, 182, 182)
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(159, 159, 159)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
+                        .addGap(120, 120, 120)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(123, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(61, 61, 61)
+                                .addComponent(Lbl_Pass))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addComponent(Lbl_Nmb_User))
+                            .addComponent(Txt_Pass, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Txt_Nmb_User, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(172, 172, 172)
+                        .addComponent(Lbl_Error_Sesion, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(63, 63, 63)
-                .addComponent(jLabel1)
-                .addGap(60, 60, 60)
-                .addComponent(jLabel2)
-                .addGap(42, 42, 42)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jLabel3)
+                .addComponent(Lbl_Titulo)
+                .addGap(38, 38, 38)
+                .addComponent(Lbl_Nmb_User)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Txt_Nmb_User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58)
+                .addComponent(Lbl_Pass)
                 .addGap(30, 30, 30)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addComponent(Txt_Pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Lbl_Error_Sesion, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Btn_Iniciar)
+                    .addComponent(Btn_Cancelar))
+                .addGap(33, 33, 33))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -160,13 +247,13 @@ public class VtnSesion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void Txt_PassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_PassActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_Txt_PassActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void Txt_Nmb_UserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_Nmb_UserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_Txt_Nmb_UserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,11 +291,14 @@ public class VtnSesion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton Btn_Cancelar;
+    private javax.swing.JButton Btn_Iniciar;
+    private javax.swing.JLabel Lbl_Error_Sesion;
+    private javax.swing.JLabel Lbl_Nmb_User;
+    private javax.swing.JLabel Lbl_Pass;
+    private javax.swing.JLabel Lbl_Titulo;
+    private javax.swing.JTextField Txt_Nmb_User;
+    private javax.swing.JTextField Txt_Pass;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

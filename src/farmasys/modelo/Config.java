@@ -2,6 +2,7 @@
 package farmasys.modelo;
 
 import farmasys.modelo.person.rol.RolBD;
+import farmasys.modelo.person.usuario.UsuarioBD;
 import java.awt.Color;
 import java.util.concurrent.ForkJoinPool;
 import javax.swing.UIManager;
@@ -21,14 +22,15 @@ public class Config {
     //Direccion de las propiedades de version  
 //    public static final String V_DIR = "version.properties";
 
-////    public static Color ERROR_COLOR = new Color(159, 53, 39);
-////    public static Color SUCCESS_COLOR = new Color(10, 186, 52);
+    public static Color ERROR_COLOR = new Color(159, 53, 39);
+    public static Color SUCCESS_COLOR = new Color(10, 186, 52);
 ////
 ////    public static Border ERR_BORDER = new LineBorder(ERROR_COLOR, 1);
 ////    public static Border DEFAULT_BORDER = UIManager.getLookAndFeel().getDefaults().getBorder("TextField.border");
     
     public static RolBD ROL;
     public static ForkJoinPool THREAD_POOL;
+    public static UsuarioBD USUARIO;
 
     /*
         Base de datos
@@ -52,7 +54,11 @@ public class Config {
         
     }
     
-    public static void setUser( RolBD rol ){
+    public static void setUser( UsuarioBD usuario ){
+        Config.USUARIO = usuario;
+    }
+    
+    public static void setRol( RolBD rol ){
         
         Config.ROL = rol;
         
